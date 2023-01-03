@@ -1,39 +1,51 @@
 # Survivor App
 
+## Description
+RESTful API that stores survivors from a zombie apocalypse and allow
+them to find the closest survivor from their location.
+- Create new survivors - name, gender and current location (latitude/ longitude)
+- Retrieve a survivor - survivor id required
+- Update a survivor
+- Retrieve closest survivor from a survivor - survivor id required, you can use
+only latitude or longitude to calculate it. This is to help a survivor to identify who is
+closer.
+- Mark survivor as infected - A survivor is marked infected when at least 3 others
+survivors report that it is infected.
+
 ## Instalando projeto
 
-É necessário ter Docker e docker-compose. A aplicação roda o banco e o server tudo em docker. Para instalar o projeto, siga estas etapas:
+Docker and docker-compose are required. The application runs the database and the server all in docker. To install the project, follow these steps:
 
-Setando o .env
+Setting the .env
 ```
-copie o arquivo .env-example com o nome .env
+copy the .env-example file with the name .env
 ```
-depois rode
+after run:
 ```
 docker-compose -f docker-compose.local.yml up --build
 ```
 
-Se tudo foi instalado com sucesso, estará rodando os containers postgres(port: 5432) e o server(port: 3000)
+If everything was successfully installed, the postgres(port: 5432) and server(port: 3000) containers will be running
 
-Agora, precisa criar o banco e rodar as migrations, para isso entre no container
+Now, you need to create the database and run the migrations, for that enter the container
 ```
 docker exec -it survivor-app bash
 ```
-e Rode:
+and Run:
 ```
 rails db:create
 rails db:migrate
 ```
 ## Use
 
-No terminal, caso queira acessar o container do server, rode
+In the terminal, if you want to access the server's container, run
 ```
 docker exec -it survivor-app bash
 ```
 
 ## Tests
 
-No terminal, caso queira rodar os testes, basta rodar o comando anterior e o comando a seguir:
+In the terminal, if you want to run the tests, just run the previous command and the following command:
 ```
 rspec
 ```
