@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>People</h1>
+
+<div id="people">
+  <% @people.each do |person| %>
+    <%= render person %>
+
+    <p>
+      <b>Name:</b> <%= person.name %>
+      <%= button_to "mark infected", infected_person_survivor_path(@person, person), method: :post %>
+    </p>
+  <% end %>
+</div>

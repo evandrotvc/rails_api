@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @person %>
+
+<h3>Survivor closest</h3>
+
+<p>
+  <b>Name:</b>
+  <%= @person_closest.name %>
+</p>
+
+<p>
+  <b>gender:</b>
+  <%= @person_closest.gender %>
+</p>
+
+<p>
+  <b>latitude:</b>
+  <%= @person_closest.latitude %>
+</p>
+
+<p>
+  <b>longitude:</b>
+  <%= @person_closest.longitude %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @distance %>
+</p>
+
+<div>
+  <%= link_to "Edit this person", edit_person_path(@person) %> |
+  <%= link_to "Back to people", people_path %> |
+
+  <%= button_to "Destroy this person", @person, method: :delete %>
+</div>

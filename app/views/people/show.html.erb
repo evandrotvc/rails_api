@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @person %>
+
+<p>
+  <b>Name:</b>
+  <%= @person.name %>
+</p>
+ 
+<p>
+  <b>gender:</b>
+  <%= @person.gender %>
+</p>
+
+<p>
+  <b>status:</b>
+  <%= @person.status %>
+</p>
+ 
+<p>
+  <b>latitude:</b>
+  <%= @person.latitude %>
+</p>
+
+<p>
+  <b>longitude:</b>
+  <%= @person.longitude %>
+</p>
+
+
+<div>
+  <%= link_to "Edit this person", edit_person_path(@person) %> |
+  <%= link_to "Back to people", people_path %> |
+  <%= link_to "locate closest person from you", closest_person_path(@person) %> |
+  <%= link_to "mark infected", mark_person_path(@person) %>
+  <br>
+  <%= button_to "Destroy this person", @person, method: :delete %>
+</div>

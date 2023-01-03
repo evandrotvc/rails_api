@@ -1,0 +1,45 @@
+<h1>New person</h1>
+
+<%# <%= render "form", person: @person %>
+
+<br>
+
+<%= form_for(@person) do |f| %>
+  <% if  @person.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize( @person.errors.count, "error") %> prohibited
+          this post from being saved:</h2>
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_area :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_area :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to people", people_path %>
+</div>
