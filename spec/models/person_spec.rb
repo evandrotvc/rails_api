@@ -11,6 +11,11 @@ RSpec.describe Person do
     it { is_expected.to validate_presence_of(:longitude) }
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:mark_survivors) }
+    it { is_expected.to have_many(:survivors_marked) }
+  end
+
   describe 'person create' do
     before { person.save }
 
