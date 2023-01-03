@@ -11,10 +11,6 @@ RSpec.describe Person do
     it { is_expected.to validate_presence_of(:longitude) }
   end
 
-  #   describe 'associations' do
-  #     it { is_expected.to have_many(:group_documents) }
-  #   end
-
   describe 'person create' do
     before { person.save }
 
